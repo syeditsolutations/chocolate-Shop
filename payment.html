@@ -10,15 +10,12 @@
 
 <form action="confirm.html">
 
-<label>Product</label><br>
-<input type="text" id="product" name="product" readonly><br><br>
-
-
-  <label>Price ($)</label><br>
-<input type="text" id="price" name="price" readonly><br><br>
+  <label>Product</label><br>
+  <input type="text" id="product" name="product" readonly><br><br>
 
   <label>Price ($)</label><br>
-<input type="text" id="price" name="price" readonly><br><br>
+  <input type="text" id="price" name="price" readonly><br><br>
+
   <h3>Customer Details</h3>
 
   <input type="text" name="name" placeholder="Full Name" required><br><br>
@@ -35,23 +32,15 @@
 
 </form>
 
+<!-- Only ONE script is needed -->
 <script>
   const params = new URLSearchParams(window.location.search);
-  document.getElementById("product").value = params.get("product");
-  document.getElementById("price").value = params.get("price");
+  const product = params.get("product") || "";
+  const price = params.get("price") || "";
+
+  document.getElementById("product").value = product;
+  document.getElementById("price").value = price;
 </script>
 
-<script>
-  // Get product and price from URL
-  const params = new URLSearchParams(window.location.search);
-  const product = params.get("product");
-  const price = params.get("price");
-
-  // Set the input fields
-  document.getElementById("product").value = product || "";
-  document.getElementById("price").value = price || "";
-</script></body>
+</body>
 </html>
-
-
-
