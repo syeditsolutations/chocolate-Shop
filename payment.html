@@ -41,6 +41,17 @@
   document.getElementById("price").value = params.get("price");
 </script>
 
+<script>
+  // Get product and price from URL
+  const params = new URLSearchParams(window.location.search);
+  const product = params.get("product");
+  const price = params.get("price");
+
+  // Set the input fields
+  document.getElementById("product").value = product || "";
+  document.getElementById("price").value = price || "";
+</script>
 </body>
 </html>
+
 
